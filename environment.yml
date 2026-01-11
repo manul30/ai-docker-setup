@@ -1,0 +1,25 @@
+name: ml
+channels:
+  - conda-forge
+  - nvidia
+  - pytorch
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - jupyterlab
+  - ipykernel
+
+  # PyTorch (CUDA handled by container)
+  #- pytorch=2.2.*
+  #- torchvision
+  #- torchaudio
+
+  # TensorFlow (CUDA enabled)
+  - pip:
+    - tensorflow[and-cuda]
+    - tensorflow-datasets
+    - keras

@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  ml:
+    build: .
+    image: ml-cuda-jupyter
+    container_name: ml-jupyter
+    runtime: nvidia
+    working_dir: /workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/cuda/targets/x86_64-linux/lib:/usr/lib/x86_64-linux-gnu
+    volumes:
+      - ./notebooks:/workspace/notebooks
+      - ./data:/workspace/data
+    ports:
+      - "8888:8888"
+    shm_size: "16gb"
+    ulimits:
+      memlock: -1
+      stack: 67108864
