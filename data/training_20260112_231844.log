@@ -1,0 +1,473 @@
+2026-01-12 23:18:51,219 - INFO - ======================================================================
+2026-01-12 23:18:51,219 - INFO - TRAINING SESSION STARTED
+2026-01-12 23:18:51,219 - INFO - Configuration: Batch size=32, Epochs=100, LR=0.001
+2026-01-12 23:18:51,220 - INFO - Model: SSDLite160_MobileNetV3
+2026-01-12 23:18:51,220 - INFO - Device: cuda
+2026-01-12 23:18:51,220 - INFO - ======================================================================
+2026-01-12 23:18:51,221 - INFO - Starting Epoch 1
+2026-01-12 23:19:11,068 - INFO - Epoch 1, Batch 0/134, Loss: 319.5686
+2026-01-12 23:19:11,624 - INFO - Epoch 1, Batch 10/134, Loss: 220.8930
+2026-01-12 23:19:12,257 - INFO - Epoch 1, Batch 20/134, Loss: 120.3939
+2026-01-12 23:19:12,902 - INFO - Epoch 1, Batch 30/134, Loss: 27.7357
+2026-01-12 23:19:13,592 - INFO - Epoch 1, Batch 40/134, Loss: 8.7092
+2026-01-12 23:19:14,245 - INFO - Epoch 1, Batch 50/134, Loss: 5.4676
+2026-01-12 23:19:14,809 - INFO - Epoch 1, Batch 60/134, Loss: 7.2287
+2026-01-12 23:19:15,407 - INFO - Epoch 1, Batch 70/134, Loss: 5.4015
+2026-01-12 23:19:15,997 - INFO - Epoch 1, Batch 80/134, Loss: 5.2569
+2026-01-12 23:19:16,596 - INFO - Epoch 1, Batch 90/134, Loss: 5.0075
+2026-01-12 23:19:17,326 - INFO - Epoch 1, Batch 100/134, Loss: 5.5201
+2026-01-12 23:19:17,900 - INFO - Epoch 1, Batch 110/134, Loss: 4.0628
+2026-01-12 23:19:18,506 - INFO - Epoch 1, Batch 120/134, Loss: 4.7205
+2026-01-12 23:19:19,007 - INFO - Epoch 1, Batch 130/134, Loss: 6.0275
+2026-01-12 23:19:32,926 - INFO - Epoch 1 completed. Average training loss: 46.2585
+2026-01-12 23:19:32,928 - INFO - Starting validation...
+2026-01-12 23:19:48,729 - INFO - Validation completed. Average validation loss: 3.8793
+2026-01-12 23:19:48,730 - INFO - ======================================================================
+2026-01-12 23:19:48,730 - INFO - Epoch 1/100 Summary:
+2026-01-12 23:19:48,730 - INFO -   Train Loss: 46.258487
+2026-01-12 23:19:48,730 - INFO -   Validation Loss: 3.879289
+2026-01-12 23:19:48,730 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:19:48,730 - INFO -   Epoch Time: 57.51s
+2026-01-12 23:19:48,730 - INFO -   Total Time: 0.96 minutes
+2026-01-12 23:19:48,782 - INFO -   ✓ New best model saved! Previous best: 3.879289
+2026-01-12 23:19:48,783 - INFO - ======================================================================
+2026-01-12 23:19:48,783 - INFO - Starting Epoch 2
+2026-01-12 23:19:49,983 - INFO - Epoch 2, Batch 0/134, Loss: 4.7066
+2026-01-12 23:19:50,641 - INFO - Epoch 2, Batch 10/134, Loss: 4.9084
+2026-01-12 23:19:51,205 - INFO - Epoch 2, Batch 20/134, Loss: 3.7363
+2026-01-12 23:19:51,776 - INFO - Epoch 2, Batch 30/134, Loss: 5.7335
+2026-01-12 23:19:52,413 - INFO - Epoch 2, Batch 40/134, Loss: 4.1012
+2026-01-12 23:20:33,169 - INFO - Epoch 2, Batch 50/134, Loss: 2.9811
+2026-01-12 23:20:33,729 - INFO - Epoch 2, Batch 60/134, Loss: 4.3796
+2026-01-12 23:20:34,285 - INFO - Epoch 2, Batch 70/134, Loss: 3.1603
+2026-01-12 23:20:34,814 - INFO - Epoch 2, Batch 80/134, Loss: 4.1807
+2026-01-12 23:20:35,344 - INFO - Epoch 2, Batch 90/134, Loss: 3.2819
+2026-01-12 23:20:35,884 - INFO - Epoch 2, Batch 100/134, Loss: 3.7393
+2026-01-12 23:20:36,397 - INFO - Epoch 2, Batch 110/134, Loss: 3.5403
+2026-01-12 23:20:37,037 - INFO - Epoch 2, Batch 120/134, Loss: 3.3111
+2026-01-12 23:20:37,502 - INFO - Epoch 2, Batch 130/134, Loss: 3.6431
+2026-01-12 23:20:37,643 - INFO - Epoch 2 completed. Average training loss: 4.2064
+2026-01-12 23:20:37,644 - INFO - Starting validation...
+2026-01-12 23:20:38,585 - INFO - Validation completed. Average validation loss: 3.1884
+2026-01-12 23:20:38,586 - INFO - ======================================================================
+2026-01-12 23:20:38,586 - INFO - Epoch 2/100 Summary:
+2026-01-12 23:20:38,586 - INFO -   Train Loss: 4.206421
+2026-01-12 23:20:38,586 - INFO -   Validation Loss: 3.188424
+2026-01-12 23:20:38,586 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:20:38,586 - INFO -   Epoch Time: 49.80s
+2026-01-12 23:20:38,586 - INFO -   Total Time: 1.79 minutes
+2026-01-12 23:20:38,646 - INFO -   ✓ New best model saved! Previous best: 3.188424
+2026-01-12 23:20:38,646 - INFO - ======================================================================
+2026-01-12 23:20:38,646 - INFO - Starting Epoch 3
+2026-01-12 23:20:39,900 - INFO - Epoch 3, Batch 0/134, Loss: 3.9529
+2026-01-12 23:20:40,582 - INFO - Epoch 3, Batch 10/134, Loss: 3.2981
+2026-01-12 23:20:41,136 - INFO - Epoch 3, Batch 20/134, Loss: 3.8188
+2026-01-12 23:20:41,692 - INFO - Epoch 3, Batch 30/134, Loss: 3.1408
+2026-01-12 23:20:42,249 - INFO - Epoch 3, Batch 40/134, Loss: 3.5525
+2026-01-12 23:20:42,793 - INFO - Epoch 3, Batch 50/134, Loss: 3.0325
+2026-01-12 23:20:43,326 - INFO - Epoch 3, Batch 60/134, Loss: 2.7590
+2026-01-12 23:20:43,909 - INFO - Epoch 3, Batch 70/134, Loss: 3.8521
+2026-01-12 23:20:44,489 - INFO - Epoch 3, Batch 80/134, Loss: 2.9868
+2026-01-12 23:20:45,056 - INFO - Epoch 3, Batch 90/134, Loss: 4.8472
+2026-01-12 23:20:45,618 - INFO - Epoch 3, Batch 100/134, Loss: 2.9633
+2026-01-12 23:20:46,269 - INFO - Epoch 3, Batch 110/134, Loss: 3.6190
+2026-01-12 23:20:46,813 - INFO - Epoch 3, Batch 120/134, Loss: 4.6552
+2026-01-12 23:20:47,297 - INFO - Epoch 3, Batch 130/134, Loss: 5.0562
+2026-01-12 23:20:47,453 - INFO - Epoch 3 completed. Average training loss: 3.5912
+2026-01-12 23:20:47,454 - INFO - Starting validation...
+2026-01-12 23:20:48,358 - INFO - Validation completed. Average validation loss: 3.1457
+2026-01-12 23:20:48,359 - INFO - ======================================================================
+2026-01-12 23:20:48,359 - INFO - Epoch 3/100 Summary:
+2026-01-12 23:20:48,359 - INFO -   Train Loss: 3.591174
+2026-01-12 23:20:48,359 - INFO -   Validation Loss: 3.145730
+2026-01-12 23:20:48,359 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:20:48,359 - INFO -   Epoch Time: 9.71s
+2026-01-12 23:20:48,359 - INFO -   Total Time: 1.95 minutes
+2026-01-12 23:20:48,413 - INFO -   ✓ New best model saved! Previous best: 3.145730
+2026-01-12 23:20:48,413 - INFO - ======================================================================
+2026-01-12 23:20:48,413 - INFO - Starting Epoch 4
+2026-01-12 23:20:49,618 - INFO - Epoch 4, Batch 0/134, Loss: 2.3647
+2026-01-12 23:20:50,403 - INFO - Epoch 4, Batch 10/134, Loss: 3.7745
+2026-01-12 23:22:10,900 - INFO - Epoch 4, Batch 20/134, Loss: 2.9019
+2026-01-12 23:22:11,492 - INFO - Epoch 4, Batch 30/134, Loss: 4.1706
+2026-01-12 23:22:12,078 - INFO - Epoch 4, Batch 40/134, Loss: 2.9635
+2026-01-12 23:22:12,595 - INFO - Epoch 4, Batch 50/134, Loss: 3.1500
+2026-01-12 23:22:13,158 - INFO - Epoch 4, Batch 60/134, Loss: 3.2022
+2026-01-12 23:22:13,680 - INFO - Epoch 4, Batch 70/134, Loss: 3.5385
+2026-01-12 23:22:14,223 - INFO - Epoch 4, Batch 80/134, Loss: 2.8900
+2026-01-12 23:22:15,174 - INFO - Epoch 4, Batch 90/134, Loss: 2.9289
+2026-01-12 23:22:15,722 - INFO - Epoch 4, Batch 100/134, Loss: 2.9559
+2026-01-12 23:22:16,273 - INFO - Epoch 4, Batch 110/134, Loss: 2.7908
+2026-01-12 23:22:17,581 - INFO - Epoch 4, Batch 120/134, Loss: 3.1617
+2026-01-12 23:22:18,063 - INFO - Epoch 4, Batch 130/134, Loss: 3.3602
+2026-01-12 23:22:18,229 - INFO - Epoch 4 completed. Average training loss: 3.1223
+2026-01-12 23:22:18,230 - INFO - Starting validation...
+2026-01-12 23:22:19,127 - INFO - Validation completed. Average validation loss: 3.0023
+2026-01-12 23:22:19,127 - INFO - ======================================================================
+2026-01-12 23:22:19,127 - INFO - Epoch 4/100 Summary:
+2026-01-12 23:22:19,127 - INFO -   Train Loss: 3.122309
+2026-01-12 23:22:19,127 - INFO -   Validation Loss: 3.002276
+2026-01-12 23:22:19,127 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:22:19,127 - INFO -   Epoch Time: 90.71s
+2026-01-12 23:22:19,127 - INFO -   Total Time: 3.47 minutes
+2026-01-12 23:22:19,179 - INFO -   ✓ New best model saved! Previous best: 3.002276
+2026-01-12 23:22:19,179 - INFO - ======================================================================
+2026-01-12 23:22:19,180 - INFO - Starting Epoch 5
+2026-01-12 23:22:20,274 - INFO - Epoch 5, Batch 0/134, Loss: 2.4017
+2026-01-12 23:22:20,864 - INFO - Epoch 5, Batch 10/134, Loss: 2.2764
+2026-01-12 23:22:21,386 - INFO - Epoch 5, Batch 20/134, Loss: 3.1941
+2026-01-12 23:22:21,922 - INFO - Epoch 5, Batch 30/134, Loss: 2.2607
+2026-01-12 23:22:22,472 - INFO - Epoch 5, Batch 40/134, Loss: 2.4860
+2026-01-12 23:22:23,045 - INFO - Epoch 5, Batch 50/134, Loss: 2.4335
+2026-01-12 23:22:23,666 - INFO - Epoch 5, Batch 60/134, Loss: 1.9657
+2026-01-12 23:22:24,182 - INFO - Epoch 5, Batch 70/134, Loss: 3.0643
+2026-01-12 23:22:24,735 - INFO - Epoch 5, Batch 80/134, Loss: 2.6913
+2026-01-12 23:22:25,281 - INFO - Epoch 5, Batch 90/134, Loss: 2.3253
+2026-01-12 23:22:25,795 - INFO - Epoch 5, Batch 100/134, Loss: 2.2457
+2026-01-12 23:22:26,325 - INFO - Epoch 5, Batch 110/134, Loss: 2.4923
+2026-01-12 23:22:26,886 - INFO - Epoch 5, Batch 120/134, Loss: 2.8624
+2026-01-12 23:22:27,337 - INFO - Epoch 5, Batch 130/134, Loss: 2.7860
+2026-01-12 23:22:27,483 - INFO - Epoch 5 completed. Average training loss: 2.5749
+2026-01-12 23:22:27,485 - INFO - Starting validation...
+2026-01-12 23:22:28,415 - INFO - Validation completed. Average validation loss: 2.4380
+2026-01-12 23:22:28,415 - INFO - ======================================================================
+2026-01-12 23:22:28,416 - INFO - Epoch 5/100 Summary:
+2026-01-12 23:22:28,416 - INFO -   Train Loss: 2.574863
+2026-01-12 23:22:28,416 - INFO -   Validation Loss: 2.437983
+2026-01-12 23:22:28,416 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:22:28,416 - INFO -   Epoch Time: 9.24s
+2026-01-12 23:22:28,416 - INFO -   Total Time: 3.62 minutes
+2026-01-12 23:22:28,468 - INFO -   ✓ New best model saved! Previous best: 2.437983
+2026-01-12 23:22:28,468 - INFO - ======================================================================
+2026-01-12 23:22:28,469 - INFO - Starting Epoch 6
+2026-01-12 23:22:31,183 - INFO - Epoch 6, Batch 0/134, Loss: 1.9852
+2026-01-12 23:22:31,917 - INFO - Epoch 6, Batch 10/134, Loss: 2.4846
+2026-01-12 23:22:32,456 - INFO - Epoch 6, Batch 20/134, Loss: 2.6130
+2026-01-12 23:22:33,012 - INFO - Epoch 6, Batch 30/134, Loss: 2.1750
+2026-01-12 23:22:33,610 - INFO - Epoch 6, Batch 40/134, Loss: 1.4553
+2026-01-12 23:22:34,165 - INFO - Epoch 6, Batch 50/134, Loss: 1.9586
+2026-01-12 23:22:34,695 - INFO - Epoch 6, Batch 60/134, Loss: 2.9682
+2026-01-12 23:22:35,233 - INFO - Epoch 6, Batch 70/134, Loss: 1.7895
+2026-01-12 23:22:35,781 - INFO - Epoch 6, Batch 80/134, Loss: 1.9203
+2026-01-12 23:22:36,300 - INFO - Epoch 6, Batch 90/134, Loss: 2.9332
+2026-01-12 23:22:36,850 - INFO - Epoch 6, Batch 100/134, Loss: 2.1942
+2026-01-12 23:22:37,384 - INFO - Epoch 6, Batch 110/134, Loss: 1.7152
+2026-01-12 23:22:37,932 - INFO - Epoch 6, Batch 120/134, Loss: 2.1531
+2026-01-12 23:22:38,384 - INFO - Epoch 6, Batch 130/134, Loss: 2.9028
+2026-01-12 23:22:38,528 - INFO - Epoch 6 completed. Average training loss: 2.2842
+2026-01-12 23:22:38,528 - INFO - Starting validation...
+2026-01-12 23:22:39,585 - INFO - Validation completed. Average validation loss: 2.4230
+2026-01-12 23:22:39,585 - INFO - ======================================================================
+2026-01-12 23:22:39,585 - INFO - Epoch 6/100 Summary:
+2026-01-12 23:22:39,585 - INFO -   Train Loss: 2.284166
+2026-01-12 23:22:39,585 - INFO -   Validation Loss: 2.423004
+2026-01-12 23:22:39,585 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:22:39,585 - INFO -   Epoch Time: 11.12s
+2026-01-12 23:22:39,585 - INFO -   Total Time: 3.81 minutes
+2026-01-12 23:22:39,640 - INFO -   ✓ New best model saved! Previous best: 2.423004
+2026-01-12 23:22:39,641 - INFO - ======================================================================
+2026-01-12 23:22:39,641 - INFO - Starting Epoch 7
+2026-01-12 23:22:40,670 - INFO - Epoch 7, Batch 0/134, Loss: 1.5561
+2026-01-12 23:22:41,250 - INFO - Epoch 7, Batch 10/134, Loss: 1.5349
+2026-01-12 23:22:41,835 - INFO - Epoch 7, Batch 20/134, Loss: 2.8272
+2026-01-12 23:22:42,438 - INFO - Epoch 7, Batch 30/134, Loss: 2.0473
+2026-01-12 23:22:42,949 - INFO - Epoch 7, Batch 40/134, Loss: 1.9656
+2026-01-12 23:22:43,486 - INFO - Epoch 7, Batch 50/134, Loss: 2.5910
+2026-01-12 23:22:43,990 - INFO - Epoch 7, Batch 60/134, Loss: 1.0748
+2026-01-12 23:22:44,654 - INFO - Epoch 7, Batch 70/134, Loss: 1.9176
+2026-01-12 23:23:25,064 - INFO - Epoch 7, Batch 80/134, Loss: 2.7834
+2026-01-12 23:23:25,618 - INFO - Epoch 7, Batch 90/134, Loss: 1.6153
+2026-01-12 23:23:26,175 - INFO - Epoch 7, Batch 100/134, Loss: 1.6923
+2026-01-12 23:23:26,709 - INFO - Epoch 7, Batch 110/134, Loss: 1.7092
+2026-01-12 23:23:27,250 - INFO - Epoch 7, Batch 120/134, Loss: 2.0192
+2026-01-12 23:23:27,801 - INFO - Epoch 7, Batch 130/134, Loss: 1.8512
+2026-01-12 23:23:27,943 - INFO - Epoch 7 completed. Average training loss: 2.0229
+2026-01-12 23:23:27,944 - INFO - Starting validation...
+2026-01-12 23:23:28,961 - INFO - Validation completed. Average validation loss: 2.3499
+2026-01-12 23:23:28,961 - INFO - ======================================================================
+2026-01-12 23:23:28,961 - INFO - Epoch 7/100 Summary:
+2026-01-12 23:23:28,961 - INFO -   Train Loss: 2.022878
+2026-01-12 23:23:28,961 - INFO -   Validation Loss: 2.349854
+2026-01-12 23:23:28,961 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:23:28,961 - INFO -   Epoch Time: 49.32s
+2026-01-12 23:23:28,961 - INFO -   Total Time: 4.63 minutes
+2026-01-12 23:23:29,021 - INFO -   ✓ New best model saved! Previous best: 2.349854
+2026-01-12 23:23:29,021 - INFO - ======================================================================
+2026-01-12 23:23:29,022 - INFO - Starting Epoch 8
+2026-01-12 23:23:30,167 - INFO - Epoch 8, Batch 0/134, Loss: 1.4886
+2026-01-12 23:23:30,827 - INFO - Epoch 8, Batch 10/134, Loss: 1.3328
+2026-01-12 23:23:31,351 - INFO - Epoch 8, Batch 20/134, Loss: 1.1510
+2026-01-12 23:23:31,903 - INFO - Epoch 8, Batch 30/134, Loss: 1.5662
+2026-01-12 23:23:32,429 - INFO - Epoch 8, Batch 40/134, Loss: 1.5688
+2026-01-12 23:23:32,977 - INFO - Epoch 8, Batch 50/134, Loss: 1.2948
+2026-01-12 23:23:33,606 - INFO - Epoch 8, Batch 60/134, Loss: 1.9703
+2026-01-12 23:23:34,119 - INFO - Epoch 8, Batch 70/134, Loss: 2.4282
+2026-01-12 23:23:34,661 - INFO - Epoch 8, Batch 80/134, Loss: 0.9771
+2026-01-12 23:23:35,209 - INFO - Epoch 8, Batch 90/134, Loss: 1.9628
+2026-01-12 23:23:35,754 - INFO - Epoch 8, Batch 100/134, Loss: 1.6728
+2026-01-12 23:23:36,296 - INFO - Epoch 8, Batch 110/134, Loss: 1.7613
+2026-01-12 23:23:36,818 - INFO - Epoch 8, Batch 120/134, Loss: 1.1435
+2026-01-12 23:23:37,471 - INFO - Epoch 8, Batch 130/134, Loss: 1.7797
+2026-01-12 23:24:17,530 - INFO - Epoch 8 completed. Average training loss: 1.6385
+2026-01-12 23:24:17,531 - INFO - Starting validation...
+2026-01-12 23:24:18,439 - INFO - Validation completed. Average validation loss: 2.9426
+2026-01-12 23:24:18,440 - INFO - ======================================================================
+2026-01-12 23:24:18,441 - INFO - Epoch 8/100 Summary:
+2026-01-12 23:24:18,441 - INFO -   Train Loss: 1.638464
+2026-01-12 23:24:18,441 - INFO -   Validation Loss: 2.942622
+2026-01-12 23:24:18,441 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:24:18,441 - INFO -   Epoch Time: 49.42s
+2026-01-12 23:24:18,441 - INFO -   Total Time: 5.45 minutes
+2026-01-12 23:24:18,441 - INFO -   No improvement. Patience counter: 1/10
+2026-01-12 23:24:18,441 - INFO - ======================================================================
+2026-01-12 23:24:18,442 - INFO - Starting Epoch 9
+2026-01-12 23:24:19,665 - INFO - Epoch 9, Batch 0/134, Loss: 1.2294
+2026-01-12 23:24:20,241 - INFO - Epoch 9, Batch 10/134, Loss: 1.3634
+2026-01-12 23:24:20,784 - INFO - Epoch 9, Batch 20/134, Loss: 1.4628
+2026-01-12 23:24:21,360 - INFO - Epoch 9, Batch 30/134, Loss: 0.9936
+2026-01-12 23:24:21,870 - INFO - Epoch 9, Batch 40/134, Loss: 1.6224
+2026-01-12 23:24:22,383 - INFO - Epoch 9, Batch 50/134, Loss: 1.6499
+2026-01-12 23:24:22,910 - INFO - Epoch 9, Batch 60/134, Loss: 1.5776
+2026-01-12 23:24:23,426 - INFO - Epoch 9, Batch 70/134, Loss: 1.8530
+2026-01-12 23:24:24,031 - INFO - Epoch 9, Batch 80/134, Loss: 1.6920
+2026-01-12 23:24:24,559 - INFO - Epoch 9, Batch 90/134, Loss: 0.9834
+2026-01-12 23:24:25,074 - INFO - Epoch 9, Batch 100/134, Loss: 1.4873
+2026-01-12 23:24:25,643 - INFO - Epoch 9, Batch 110/134, Loss: 2.0039
+2026-01-12 23:24:26,175 - INFO - Epoch 9, Batch 120/134, Loss: 1.7814
+2026-01-12 23:24:26,607 - INFO - Epoch 9, Batch 130/134, Loss: 1.9420
+2026-01-12 23:24:26,746 - INFO - Epoch 9 completed. Average training loss: 1.5440
+2026-01-12 23:24:26,747 - INFO - Starting validation...
+2026-01-12 23:24:27,646 - INFO - Validation completed. Average validation loss: 2.6669
+2026-01-12 23:24:27,647 - INFO - ======================================================================
+2026-01-12 23:24:27,647 - INFO - Epoch 9/100 Summary:
+2026-01-12 23:24:27,647 - INFO -   Train Loss: 1.543988
+2026-01-12 23:24:27,647 - INFO -   Validation Loss: 2.666888
+2026-01-12 23:24:27,647 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:24:27,647 - INFO -   Epoch Time: 9.21s
+2026-01-12 23:24:27,647 - INFO -   Total Time: 5.61 minutes
+2026-01-12 23:24:27,647 - INFO -   No improvement. Patience counter: 2/10
+2026-01-12 23:24:27,647 - INFO - ======================================================================
+2026-01-12 23:24:27,648 - INFO - Starting Epoch 10
+2026-01-12 23:24:28,763 - INFO - Epoch 10, Batch 0/134, Loss: 0.7893
+2026-01-12 23:24:29,855 - INFO - Epoch 10, Batch 10/134, Loss: 1.4711
+2026-01-12 23:24:30,477 - INFO - Epoch 10, Batch 20/134, Loss: 1.3433
+2026-01-12 23:24:31,098 - INFO - Epoch 10, Batch 30/134, Loss: 1.2788
+2026-01-12 23:24:32,895 - INFO - Epoch 10, Batch 40/134, Loss: 1.0319
+2026-01-12 23:24:33,540 - INFO - Epoch 10, Batch 50/134, Loss: 0.8730
+2026-01-12 23:24:34,254 - INFO - Epoch 10, Batch 60/134, Loss: 1.3897
+2026-01-12 23:24:34,883 - INFO - Epoch 10, Batch 70/134, Loss: 1.7083
+2026-01-12 23:24:35,499 - INFO - Epoch 10, Batch 80/134, Loss: 1.8522
+2026-01-12 23:24:36,135 - INFO - Epoch 10, Batch 90/134, Loss: 1.1942
+2026-01-12 23:24:36,763 - INFO - Epoch 10, Batch 100/134, Loss: 1.3265
+2026-01-12 23:24:37,375 - INFO - Epoch 10, Batch 110/134, Loss: 1.6523
+2026-01-12 23:24:38,027 - INFO - Epoch 10, Batch 120/134, Loss: 1.0812
+2026-01-12 23:24:38,550 - INFO - Epoch 10, Batch 130/134, Loss: 1.7756
+2026-01-12 23:24:38,729 - INFO - Epoch 10 completed. Average training loss: 1.3098
+2026-01-12 23:24:38,730 - INFO - Starting validation...
+2026-01-12 23:24:39,820 - INFO - Validation completed. Average validation loss: 2.8763
+2026-01-12 23:24:39,821 - INFO - ======================================================================
+2026-01-12 23:24:39,821 - INFO - Epoch 10/100 Summary:
+2026-01-12 23:24:39,821 - INFO -   Train Loss: 1.309755
+2026-01-12 23:24:39,821 - INFO -   Validation Loss: 2.876268
+2026-01-12 23:24:39,821 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:24:39,821 - INFO -   Epoch Time: 12.17s
+2026-01-12 23:24:39,821 - INFO -   Total Time: 5.81 minutes
+2026-01-12 23:24:39,821 - INFO -   No improvement. Patience counter: 3/10
+2026-01-12 23:24:39,821 - INFO - ======================================================================
+2026-01-12 23:24:39,821 - INFO - Starting Epoch 11
+2026-01-12 23:24:41,162 - INFO - Epoch 11, Batch 0/134, Loss: 0.6967
+2026-01-12 23:24:41,919 - INFO - Epoch 11, Batch 10/134, Loss: 1.2952
+2026-01-12 23:24:42,639 - INFO - Epoch 11, Batch 20/134, Loss: 1.0646
+2026-01-12 23:24:43,316 - INFO - Epoch 11, Batch 30/134, Loss: 1.1005
+2026-01-12 23:24:44,062 - INFO - Epoch 11, Batch 40/134, Loss: 1.9730
+2026-01-12 23:24:44,811 - INFO - Epoch 11, Batch 50/134, Loss: 0.4917
+2026-01-12 23:25:25,763 - INFO - Epoch 11, Batch 60/134, Loss: 0.9216
+2026-01-12 23:25:26,524 - INFO - Epoch 11, Batch 70/134, Loss: 1.4827
+2026-01-12 23:25:27,241 - INFO - Epoch 11, Batch 80/134, Loss: 2.2571
+2026-01-12 23:25:27,925 - INFO - Epoch 11, Batch 90/134, Loss: 1.5560
+2026-01-12 23:25:28,617 - INFO - Epoch 11, Batch 100/134, Loss: 1.2205
+2026-01-12 23:25:29,312 - INFO - Epoch 11, Batch 110/134, Loss: 1.3365
+2026-01-12 23:25:29,969 - INFO - Epoch 11, Batch 120/134, Loss: 1.0112
+2026-01-12 23:25:30,490 - INFO - Epoch 11, Batch 130/134, Loss: 1.3220
+2026-01-12 23:25:30,641 - INFO - Epoch 11 completed. Average training loss: 1.3218
+2026-01-12 23:25:30,642 - INFO - Starting validation...
+2026-01-12 23:25:31,556 - INFO - Validation completed. Average validation loss: 2.8958
+2026-01-12 23:25:31,557 - INFO - ======================================================================
+2026-01-12 23:25:31,557 - INFO - Epoch 11/100 Summary:
+2026-01-12 23:25:31,557 - INFO -   Train Loss: 1.321773
+2026-01-12 23:25:31,557 - INFO -   Validation Loss: 2.895848
+2026-01-12 23:25:31,557 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:25:31,557 - INFO -   Epoch Time: 51.74s
+2026-01-12 23:25:31,557 - INFO -   Total Time: 6.67 minutes
+2026-01-12 23:25:31,557 - INFO -   No improvement. Patience counter: 4/10
+2026-01-12 23:25:31,557 - INFO - ======================================================================
+2026-01-12 23:25:31,558 - INFO - Starting Epoch 12
+2026-01-12 23:25:32,853 - INFO - Epoch 12, Batch 0/134, Loss: 1.6236
+2026-01-12 23:25:33,505 - INFO - Epoch 12, Batch 10/134, Loss: 1.1238
+2026-01-12 23:25:34,020 - INFO - Epoch 12, Batch 20/134, Loss: 1.0148
+2026-01-12 23:25:34,564 - INFO - Epoch 12, Batch 30/134, Loss: 0.8576
+2026-01-12 23:25:35,136 - INFO - Epoch 12, Batch 40/134, Loss: 1.2173
+2026-01-12 23:25:35,737 - INFO - Epoch 12, Batch 50/134, Loss: 1.8400
+2026-01-12 23:25:36,254 - INFO - Epoch 12, Batch 60/134, Loss: 1.1544
+2026-01-12 23:25:36,826 - INFO - Epoch 12, Batch 70/134, Loss: 1.3497
+2026-01-12 23:25:37,485 - INFO - Epoch 12, Batch 80/134, Loss: 1.0196
+2026-01-12 23:25:38,031 - INFO - Epoch 12, Batch 90/134, Loss: 1.1549
+2026-01-12 23:25:38,601 - INFO - Epoch 12, Batch 100/134, Loss: 1.1474
+2026-01-12 23:25:39,186 - INFO - Epoch 12, Batch 110/134, Loss: 1.4088
+2026-01-12 23:25:39,710 - INFO - Epoch 12, Batch 120/134, Loss: 1.1093
+2026-01-12 23:25:40,238 - INFO - Epoch 12, Batch 130/134, Loss: 1.0437
+2026-01-12 23:25:40,395 - INFO - Epoch 12 completed. Average training loss: 1.0931
+2026-01-12 23:25:40,397 - INFO - Starting validation...
+2026-01-12 23:25:41,347 - INFO - Validation completed. Average validation loss: 3.2869
+2026-01-12 23:25:41,347 - INFO - ======================================================================
+2026-01-12 23:25:41,347 - INFO - Epoch 12/100 Summary:
+2026-01-12 23:25:41,347 - INFO -   Train Loss: 1.093149
+2026-01-12 23:25:41,347 - INFO -   Validation Loss: 3.286893
+2026-01-12 23:25:41,347 - INFO -   Learning Rate: 0.00100000
+2026-01-12 23:25:41,347 - INFO -   Epoch Time: 9.79s
+2026-01-12 23:25:41,347 - INFO -   Total Time: 6.84 minutes
+2026-01-12 23:25:41,347 - INFO -   No improvement. Patience counter: 5/10
+2026-01-12 23:25:41,347 - INFO - ======================================================================
+2026-01-12 23:25:41,348 - INFO - Starting Epoch 13
+2026-01-12 23:25:42,371 - INFO - Epoch 13, Batch 0/134, Loss: 1.7336
+2026-01-12 23:27:03,211 - INFO - Epoch 13, Batch 10/134, Loss: 1.5334
+2026-01-12 23:27:03,789 - INFO - Epoch 13, Batch 20/134, Loss: 0.8685
+2026-01-12 23:27:04,361 - INFO - Epoch 13, Batch 30/134, Loss: 1.6222
+2026-01-12 23:27:04,929 - INFO - Epoch 13, Batch 40/134, Loss: 0.9381
+2026-01-12 23:27:06,210 - INFO - Epoch 13, Batch 50/134, Loss: 0.5312
+2026-01-12 23:27:06,903 - INFO - Epoch 13, Batch 60/134, Loss: 1.6755
+2026-01-12 23:27:07,531 - INFO - Epoch 13, Batch 70/134, Loss: 1.1149
+2026-01-12 23:27:08,149 - INFO - Epoch 13, Batch 80/134, Loss: 1.7909
+2026-01-12 23:27:09,387 - INFO - Epoch 13, Batch 90/134, Loss: 0.9258
+2026-01-12 23:27:10,142 - INFO - Epoch 13, Batch 100/134, Loss: 0.9462
+2026-01-12 23:27:10,766 - INFO - Epoch 13, Batch 110/134, Loss: 0.9809
+2026-01-12 23:27:11,393 - INFO - Epoch 13, Batch 120/134, Loss: 1.4817
+2026-01-12 23:27:11,967 - INFO - Epoch 13, Batch 130/134, Loss: 1.3742
+2026-01-12 23:27:12,147 - INFO - Epoch 13 completed. Average training loss: 1.1269
+2026-01-12 23:27:12,149 - INFO - Starting validation...
+2026-01-12 23:27:13,280 - INFO - Validation completed. Average validation loss: 2.5007
+2026-01-12 23:27:13,280 - INFO - ======================================================================
+2026-01-12 23:27:13,281 - INFO - Epoch 13/100 Summary:
+2026-01-12 23:27:13,281 - INFO -   Train Loss: 1.126879
+2026-01-12 23:27:13,281 - INFO -   Validation Loss: 2.500728
+2026-01-12 23:27:13,281 - INFO -   Learning Rate: 0.00050000
+2026-01-12 23:27:13,281 - INFO -   Epoch Time: 91.93s
+2026-01-12 23:27:13,281 - INFO -   Total Time: 8.37 minutes
+2026-01-12 23:27:13,281 - INFO -   No improvement. Patience counter: 6/10
+2026-01-12 23:27:13,281 - INFO - ======================================================================
+2026-01-12 23:27:13,282 - INFO - Starting Epoch 14
+2026-01-12 23:27:14,674 - INFO - Epoch 14, Batch 0/134, Loss: 0.5837
+2026-01-12 23:27:15,523 - INFO - Epoch 14, Batch 10/134, Loss: 0.8142
+2026-01-12 23:27:16,222 - INFO - Epoch 14, Batch 20/134, Loss: 0.7592
+2026-01-12 23:27:16,919 - INFO - Epoch 14, Batch 30/134, Loss: 0.7233
+2026-01-12 23:27:17,605 - INFO - Epoch 14, Batch 40/134, Loss: 0.3158
+2026-01-12 23:27:18,291 - INFO - Epoch 14, Batch 50/134, Loss: 0.4920
+2026-01-12 23:27:18,955 - INFO - Epoch 14, Batch 60/134, Loss: 0.4290
+2026-01-12 23:27:19,642 - INFO - Epoch 14, Batch 70/134, Loss: 0.4827
+2026-01-12 23:27:20,310 - INFO - Epoch 14, Batch 80/134, Loss: 0.4293
+2026-01-12 23:27:20,949 - INFO - Epoch 14, Batch 90/134, Loss: 0.4911
+2026-01-12 23:27:21,628 - INFO - Epoch 14, Batch 100/134, Loss: 0.4791
+2026-01-12 23:28:02,484 - INFO - Epoch 14, Batch 110/134, Loss: 0.4997
+2026-01-12 23:28:02,963 - INFO - Epoch 14, Batch 120/134, Loss: 0.2907
+2026-01-12 23:28:03,359 - INFO - Epoch 14, Batch 130/134, Loss: 0.3252
+2026-01-12 23:28:03,491 - INFO - Epoch 14 completed. Average training loss: 0.5304
+2026-01-12 23:28:03,492 - INFO - Starting validation...
+2026-01-12 23:28:04,278 - INFO - Validation completed. Average validation loss: 2.9703
+2026-01-12 23:28:04,278 - INFO - ======================================================================
+2026-01-12 23:28:04,278 - INFO - Epoch 14/100 Summary:
+2026-01-12 23:28:04,278 - INFO -   Train Loss: 0.530381
+2026-01-12 23:28:04,278 - INFO -   Validation Loss: 2.970296
+2026-01-12 23:28:04,278 - INFO -   Learning Rate: 0.00050000
+2026-01-12 23:28:04,279 - INFO -   Epoch Time: 51.00s
+2026-01-12 23:28:04,279 - INFO -   Total Time: 9.22 minutes
+2026-01-12 23:28:04,279 - INFO -   No improvement. Patience counter: 7/10
+2026-01-12 23:28:04,279 - INFO - ======================================================================
+2026-01-12 23:28:04,279 - INFO - Starting Epoch 15
+2026-01-12 23:28:05,138 - INFO - Epoch 15, Batch 0/134, Loss: 0.4786
+2026-01-12 23:28:05,630 - INFO - Epoch 15, Batch 10/134, Loss: 0.2896
+2026-01-12 23:28:06,090 - INFO - Epoch 15, Batch 20/134, Loss: 0.3823
+2026-01-12 23:28:06,558 - INFO - Epoch 15, Batch 30/134, Loss: 0.2325
+2026-01-12 23:28:07,000 - INFO - Epoch 15, Batch 40/134, Loss: 0.1967
+2026-01-12 23:28:07,467 - INFO - Epoch 15, Batch 50/134, Loss: 0.2585
+2026-01-12 23:28:07,917 - INFO - Epoch 15, Batch 60/134, Loss: 0.3343
+2026-01-12 23:28:08,433 - INFO - Epoch 15, Batch 70/134, Loss: 0.1231
+2026-01-12 23:28:08,894 - INFO - Epoch 15, Batch 80/134, Loss: 0.2932
+2026-01-12 23:28:09,347 - INFO - Epoch 15, Batch 90/134, Loss: 0.2779
+2026-01-12 23:28:09,805 - INFO - Epoch 15, Batch 100/134, Loss: 0.2917
+2026-01-12 23:28:10,280 - INFO - Epoch 15, Batch 110/134, Loss: 0.2851
+2026-01-12 23:28:10,769 - INFO - Epoch 15, Batch 120/134, Loss: 0.3235
+2026-01-12 23:28:11,173 - INFO - Epoch 15, Batch 130/134, Loss: 0.3367
+2026-01-12 23:28:11,308 - INFO - Epoch 15 completed. Average training loss: 0.2710
+2026-01-12 23:28:11,309 - INFO - Starting validation...
+2026-01-12 23:28:12,032 - INFO - Validation completed. Average validation loss: 3.4689
+2026-01-12 23:28:12,032 - INFO - ======================================================================
+2026-01-12 23:28:12,032 - INFO - Epoch 15/100 Summary:
+2026-01-12 23:28:12,032 - INFO -   Train Loss: 0.271034
+2026-01-12 23:28:12,032 - INFO -   Validation Loss: 3.468901
+2026-01-12 23:28:12,032 - INFO -   Learning Rate: 0.00050000
+2026-01-12 23:28:12,032 - INFO -   Epoch Time: 7.75s
+2026-01-12 23:28:12,032 - INFO -   Total Time: 9.35 minutes
+2026-01-12 23:28:12,032 - INFO -   No improvement. Patience counter: 8/10
+2026-01-12 23:28:12,032 - INFO - ======================================================================
+2026-01-12 23:28:12,033 - INFO - Starting Epoch 16
+2026-01-12 23:28:12,897 - INFO - Epoch 16, Batch 0/134, Loss: 0.2196
+2026-01-12 23:29:33,784 - INFO - Epoch 16, Batch 10/134, Loss: 0.3476
+2026-01-12 23:29:34,329 - INFO - Epoch 16, Batch 20/134, Loss: 0.2580
+2026-01-12 23:29:34,892 - INFO - Epoch 16, Batch 30/134, Loss: 0.1004
+2026-01-12 23:29:35,853 - INFO - Epoch 16, Batch 40/134, Loss: 0.2214
+2026-01-12 23:29:36,418 - INFO - Epoch 16, Batch 50/134, Loss: 0.3042
+2026-01-12 23:29:37,122 - INFO - Epoch 16, Batch 60/134, Loss: 0.1853
+2026-01-12 23:29:38,391 - INFO - Epoch 16, Batch 70/134, Loss: 0.3016
+2026-01-12 23:29:39,046 - INFO - Epoch 16, Batch 80/134, Loss: 0.3633
+2026-01-12 23:29:40,118 - INFO - Epoch 16, Batch 90/134, Loss: 0.1377
+2026-01-12 23:29:40,778 - INFO - Epoch 16, Batch 100/134, Loss: 0.2142
+2026-01-12 23:29:41,413 - INFO - Epoch 16, Batch 110/134, Loss: 0.2749
+2026-01-12 23:29:42,043 - INFO - Epoch 16, Batch 120/134, Loss: 0.1175
+2026-01-12 23:29:42,564 - INFO - Epoch 16, Batch 130/134, Loss: 0.1706
+2026-01-12 23:29:42,792 - INFO - Epoch 16 completed. Average training loss: 0.2699
+2026-01-12 23:29:42,792 - INFO - Starting validation...
+2026-01-12 23:29:43,988 - INFO - Validation completed. Average validation loss: 3.7029
+2026-01-12 23:29:43,988 - INFO - ======================================================================
+2026-01-12 23:29:43,989 - INFO - Epoch 16/100 Summary:
+2026-01-12 23:29:43,989 - INFO -   Train Loss: 0.269913
+2026-01-12 23:29:43,989 - INFO -   Validation Loss: 3.702870
+2026-01-12 23:29:43,989 - INFO -   Learning Rate: 0.00050000
+2026-01-12 23:29:43,989 - INFO -   Epoch Time: 91.96s
+2026-01-12 23:29:43,989 - INFO -   Total Time: 10.88 minutes
+2026-01-12 23:29:43,989 - INFO -   No improvement. Patience counter: 9/10
+2026-01-12 23:29:43,989 - INFO - ======================================================================
+2026-01-12 23:29:43,989 - INFO - Starting Epoch 17
+2026-01-12 23:29:45,223 - INFO - Epoch 17, Batch 0/134, Loss: 0.2816
+2026-01-12 23:29:46,092 - INFO - Epoch 17, Batch 10/134, Loss: 0.4612
+2026-01-12 23:29:46,779 - INFO - Epoch 17, Batch 20/134, Loss: 0.2825
+2026-01-12 23:29:47,438 - INFO - Epoch 17, Batch 30/134, Loss: 0.3861
+2026-01-12 23:29:48,054 - INFO - Epoch 17, Batch 40/134, Loss: 0.1097
+2026-01-12 23:29:48,691 - INFO - Epoch 17, Batch 50/134, Loss: 0.4103
+2026-01-12 23:29:49,335 - INFO - Epoch 17, Batch 60/134, Loss: 0.0646
+2026-01-12 23:29:49,927 - INFO - Epoch 17, Batch 70/134, Loss: 0.4728
+2026-01-12 23:29:50,573 - INFO - Epoch 17, Batch 80/134, Loss: 0.2644
+2026-01-12 23:29:51,238 - INFO - Epoch 17, Batch 90/134, Loss: 0.2013
+2026-01-12 23:30:31,836 - INFO - Epoch 17, Batch 100/134, Loss: 0.1101
+2026-01-12 23:30:32,402 - INFO - Epoch 17, Batch 110/134, Loss: 0.2472
+2026-01-12 23:30:32,958 - INFO - Epoch 17, Batch 120/134, Loss: 0.1842
+2026-01-12 23:30:33,455 - INFO - Epoch 17, Batch 130/134, Loss: 0.2500
+2026-01-12 23:30:33,618 - INFO - Epoch 17 completed. Average training loss: 0.2880
+2026-01-12 23:30:33,619 - INFO - Starting validation...
+2026-01-12 23:30:34,446 - INFO - Validation completed. Average validation loss: 3.3071
+2026-01-12 23:30:34,446 - INFO - ======================================================================
+2026-01-12 23:30:34,446 - INFO - Epoch 17/100 Summary:
+2026-01-12 23:30:34,446 - INFO -   Train Loss: 0.288030
+2026-01-12 23:30:34,446 - INFO -   Validation Loss: 3.307128
+2026-01-12 23:30:34,447 - INFO -   Learning Rate: 0.00050000
+2026-01-12 23:30:34,447 - INFO -   Epoch Time: 50.46s
+2026-01-12 23:30:34,447 - INFO -   Total Time: 11.72 minutes
+2026-01-12 23:30:34,447 - INFO -   No improvement. Patience counter: 10/10
+2026-01-12 23:30:34,447 - INFO - ======================================================================
+2026-01-12 23:30:34,447 - WARNING - Early stopping triggered after 17 epochs (patience=10)
+2026-01-12 23:30:34,447 - INFO - ======================================================================
+2026-01-12 23:30:34,447 - INFO - TRAINING SESSION COMPLETED
+2026-01-12 23:30:34,447 - INFO - Total training time: 11.72 minutes (703.23 seconds)
+2026-01-12 23:30:34,447 - INFO - Best validation loss achieved: 2.349854
+2026-01-12 23:30:34,447 - INFO - Total epochs completed: 17
+2026-01-12 23:30:34,447 - INFO - Final learning rate: 0.00050000
+2026-01-12 23:30:34,447 - INFO - ======================================================================
