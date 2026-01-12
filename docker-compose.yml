@@ -3,8 +3,8 @@ version: "3.9"
 services:
   ml:
     build: .
-    image: ml-cuda-jupyter
-    container_name: ml-jupyter
+    image: ml-pytorch-cuda-jupyter
+    container_name: ml-pytorch-jupyter
     runtime: nvidia
     working_dir: /workspace
     deploy:
@@ -15,7 +15,9 @@ services:
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
-      - LD_LIBRARY_PATH=/usr/local/lib/python3.11/dist-packages/nvidia/cudnn/lib:/usr/local/lib/python3.11/dist-packages/nvidia/cublas/lib:/usr/local/lib/python3.11/dist-packages/nvidia/cuda_nvrtc/lib:/usr/local/lib/python3.11/dist-packages/nvidia/cuda_runtime/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/local/cuda/targets/x86_64-linux/lib:/usr/lib/x86_64-linux-gnu
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTORCH_ALLOC_CONF=expandable_segments:True
+      - TORCH_ALLOW_TF32_CUBLAS_OVERRIDE=1
     volumes:
       - ./notebooks:/workspace/notebooks
       - ./data:/workspace/data
