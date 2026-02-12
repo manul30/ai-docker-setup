@@ -28,6 +28,10 @@ RUN pip install --no-cache-dir \
     opencv-python-headless \
     tqdm
 
+RUN pip install --no-cache-dir \
+    albumentations \
+    roboflow
+
 # Set working directory
 WORKDIR /workspace
 

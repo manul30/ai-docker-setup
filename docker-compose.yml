@@ -1,17 +1,16 @@
-version: "3.9"
-
 services:
   ml:
     build: .
     image: ml-pytorch-cuda-jupyter
     container_name: ml-pytorch-jupyter
-    runtime: nvidia
     working_dir: /workspace
     deploy:
       resources:
         reservations:
           devices:
-            - capabilities: [gpu]
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
@@ -21,6 +20,8 @@ services:
     volumes:
       - ./notebooks:/workspace/notebooks
       - ./data:/workspace/data
+      - ./assets:/workspace/assets
+      - ./models:/workspace/models
     ports:
       - "8888:8888"
     shm_size: "16gb"
