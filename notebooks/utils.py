@@ -11,23 +11,23 @@ from PIL import Image
 
 def visualize_embedding_attention(image_path, model, preprocess, device='cuda', figsize=(15, 5)):
     """
-    Visualiza qué regiones de la imagen son importantes para el embedding generado.
-    Similar a Grad-CAM pero usando activaciones de la última capa convolucional.
+    Visualizes which regions of the image are important for the generated embedding.
+    Similar to Grad-CAM but using activations from the last convolutional layer.
     """
-    # Convertir ruta relativa a absoluta para Docker
+    # Convert relative path to absolute for Docker
     from pathlib import Path
     if not Path(image_path).is_absolute():
         image_path = str(Path("/workspace") / image_path)
     
-    # Cargar y preprocesar imagen
+    # Load and preprocess image
     img = Image.open(image_path).convert('RGB')
     img_tensor = preprocess(img).unsqueeze(0).to(device)
 
-    # Crear modelo con hooks para capturar activaciones
+    # Create model with hooks to capture activations
     activation = {}
     def get_activation(name):
         def hook(model, input, output):
-            # Manejar caso donde output es dict (DeepLabV3) o tensor
+            # Handle case where output is dict (DeepLabV3) or tensor
             if isinstance(output, dict):
                 activation[name] = output
             elif hasattr(output, 'detach'):
@@ -36,70 +36,70 @@ def visualize_embedding_attention(image_path, model, preprocess, device='cuda', 
                 activation[name] = output
         return hook
 
-    # Registrar hook en la última capa convolucional
-    # Para modelos de segmentación, usar el backbone
+    # Register hook on the last convolutional layer
+    # For segmentation models, use the backbone
     if hasattr(model, 'backbone'):
-        # DeepLabV3 style - hook en la salida del backbone
+        # DeepLabV3 style - hook on backbone output
         model.backbone.register_forward_hook(get_activation('backbone'))
     elif hasattr(model, 'features'):
         # MobileNetV3 style
         model.features.register_forward_hook(get_activation('features'))
     else:
-        # Backbone directo
+        # Direct backbone
         model.register_forward_hook(get_activation('backbone'))
 
-    # Asegurar que el modelo esté en el dispositivo correcto
+    # Ensure model is on the correct device
     model = model.to(device)
     model.eval()
     with torch.no_grad():
         _ = model(img_tensor)
 
-    # Obtener activaciones
+    # Get activations
     if 'backbone' in activation:
         features = activation['backbone']
     elif 'features' in activation:
         features = activation['features']
     else:
-        print("No se capturaron activaciones")
+        print("No activation maps captured")
         return
 
-    # Si features es un dict (como en DeepLab), tomar la salida principal
+    # If features is a dict (like in DeepLab), take the main output
     if isinstance(features, dict):
-        # Para DeepLab, 'out' es la salida principal del backbone
+        # For DeepLab, 'out' is the main output from the backbone
         if 'out' in features:
             features = features['out']
         else:
-            # Tomar la primera salida disponible
+            # Take the first available output
             features = list(features.values())[0]
 
-    # Crear mapa de atención: promedio de canales y upsampling
+    # Create attention map: channel average and upsampling
     attention_map = features.mean(dim=1).squeeze(0)  # [H, W]
-    attention_map = torch.relu(attention_map)  # ReLU para valores positivos
+    attention_map = torch.relu(attention_map)  # ReLU for positive values
 
-    # Normalizar
+    # Normalize
     attention_map = (attention_map - attention_map.min()) / (attention_map.max() - attention_map.min())
 
-    # Convertir a numpy y upsamplear a tamaño de imagen original
+    # Convert to numpy and upsample to original image size
     attention_numpy = attention_map.cpu().numpy()
     attention_resized = cv2.resize(attention_numpy, (img.width, img.height))
 
-    # Crear visualización
+    # Create visualization
     fig, axes = plt.subplots(1, 3, figsize=figsize)
 
-    # Imagen original
+    # Original image
     axes[0].imshow(img)
-    axes[0].set_title('Imagen Original')
+    axes[0].set_title('Original Image')
     axes[0].axis('off')
 
-    # Mapa de atención
+    # Attention map
     axes[1].imshow(attention_resized, cmap='jet', alpha=0.7)
-    axes[1].set_title('Mapa de Atención')
+    axes[1].set_title('Activation Map')
     axes[1].axis('off')
 
-    # Superposición
+    # Overlay
     axes[2].imshow(img)
     axes[2].imshow(attention_resized, cmap='jet', alpha=0.5)
-    axes[2].set_title('Superposición')
+    axes[2].set_title('Overlayed')
     axes[2].axis('off')
 
     plt.tight_layout()
@@ -111,21 +111,21 @@ def visualize_embedding_attention(image_path, model, preprocess, device='cuda', 
 def compare_backbone_attention(image_path, backbone1, backbone2, preprocess,
                               name1="Backbone 1", name2="Backbone 2", device='cuda'):
     """
-    Compara los mapas de atención de dos backbones diferentes en la misma imagen.
+    Compares attention maps from two different backbones on the same image.
     """
-    # Convertir ruta relativa a absoluta para Docker
+    # Convert relative path to absolute for Docker
     from pathlib import Path
     if not Path(image_path).is_absolute():
         image_path = str(Path("/workspace") / image_path)
     
     img = Image.open(image_path).convert('RGB')
 
-    # Función helper para obtener mapa de atención
+    # Helper function to get attention map
     def get_attention_map(model, img_tensor):
         activation = {}
         def get_activation(name):
             def hook(model, input, output):
-                # Manejar caso donde output es dict (DeepLabV3) o tensor
+                # Handle case where output is dict (DeepLabV3) or tensor
                 if isinstance(output, dict):
                     activation[name] = output
                 elif hasattr(output, 'detach'):
@@ -134,7 +134,7 @@ def compare_backbone_attention(image_path, backbone1, backbone2, preprocess,
                     activation[name] = output
             return hook
 
-        # Registrar hook
+        # Register hook
         if hasattr(model, 'backbone'):
             model.backbone.register_forward_hook(get_activation('backbone'))
         elif hasattr(model, 'features'):
@@ -142,13 +142,13 @@ def compare_backbone_attention(image_path, backbone1, backbone2, preprocess,
         else:
             model.register_forward_hook(get_activation('model'))
 
-        # Asegurar que el modelo esté en el dispositivo correcto
+        # Ensure model is on the correct device
         model = model.to(device)
         model.eval()
         with torch.no_grad():
             _ = model(img_tensor)
 
-        # Obtener features
+        # Get features
         if 'backbone' in activation:
             features = activation['backbone']
         elif 'features' in activation:
@@ -158,79 +158,79 @@ def compare_backbone_attention(image_path, backbone1, backbone2, preprocess,
         else:
             return None
 
-        # Si features es un dict, tomar la salida principal
+        # If features is a dict, take the main output
         if isinstance(features, dict):
             if 'out' in features:
                 features = features['out']
             else:
                 features = list(features.values())[0]
 
-        # Crear mapa de atención
+        # Create attention map
         attention_map = features.mean(dim=1).squeeze(0)
         attention_map = torch.relu(attention_map)
         attention_map = (attention_map - attention_map.min()) / (attention_map.max() - attention_map.min())
         return attention_map.cpu().numpy()
 
-    # Preprocesar imagen y asegurar dispositivo correcto
+    # Preprocess image and ensure correct device
     img_tensor = preprocess(img).unsqueeze(0).to(device)
     
-    # Asegurar que los modelos estén en el dispositivo correcto
+    # Ensure models are on the correct device
     backbone1 = backbone1.to(device)
     backbone2 = backbone2.to(device)
 
-    # Obtener mapas de atención
+    # Get attention maps
     attn1 = get_attention_map(backbone1, img_tensor)
     attn2 = get_attention_map(backbone2, img_tensor)
 
     if attn1 is None or attn2 is None:
-        print("Error obteniendo mapas de atención")
+        print("Error getting attention maps")
         return
 
     # Resize
     attn1_resized = cv2.resize(attn1, (img.width, img.height))
     attn2_resized = cv2.resize(attn2, (img.width, img.height))
 
-    # Calcular diferencia
+    # Calculate difference
     diff = np.abs(attn1_resized - attn2_resized)
 
-    # Visualizar comparación
+    # Visualize comparison
     fig, axes = plt.subplots(2, 4, figsize=(20, 10))
 
-    # Fila 1: Backbone 1
+    # Row 1: Backbone 1
     axes[0,0].imshow(img)
-    axes[0,0].set_title('Imagen Original')
+    axes[0,0].set_title('Original Image')
     axes[0,0].axis('off')
 
     axes[0,1].imshow(attn1_resized, cmap='jet')
-    axes[0,1].set_title(f'{name1} - Atención')
+    axes[0,1].set_title(f'{name1} - Attention')
     axes[0,1].axis('off')
 
     axes[0,2].imshow(img)
     axes[0,2].imshow(attn1_resized, cmap='jet', alpha=0.5)
-    axes[0,2].set_title(f'{name1} - Superposición')
+    axes[0,2].set_title(f'{name1} - Overlay')
     axes[0,2].axis('off')
 
-    # Espacio vacío
+    # Empty space
     axes[0,3].axis('off')
 
-    # Fila 2: Backbone 2 y comparación
+    # Row 2: Backbone 2 and comparison
     axes[1,0].imshow(attn2_resized, cmap='jet')
-    axes[1,0].set_title(f'{name2} - Atención')
+    axes[1,0].set_title(f'{name2} - Activation Map')
     axes[1,0].axis('off')
 
     axes[1,1].imshow(img)
     axes[1,1].imshow(attn2_resized, cmap='jet', alpha=0.5)
-    axes[1,1].set_title(f'{name2} - Superposición')
+    axes[1,1].set_title(f'{name2} - Overlayed')
     axes[1,1].axis('off')
 
     axes[1,2].imshow(diff, cmap='hot')
-    axes[1,2].set_title('Diferencia |B1 - B2|')
+    axes[1,2].set_title('Difference |B1 - B2|')
     axes[1,2].axis('off')
 
-    # Estadísticas
-    axes[1,3].text(0.1, 0.8, f'Similitud: {1 - diff.mean():.3f}', fontsize=12, fontweight='bold')
-    axes[1,3].text(0.1, 0.6, f'Diferencia media: {diff.mean():.3f}', fontsize=10)
-    axes[1,3].text(0.1, 0.4, f'Diferencia máxima: {diff.max():.3f}', fontsize=10)
+    # Statistics
+    axes[1,3].text(0.1, 0.8, f'Similarity: {1 - diff.mean():.3f}', fontsize=12, fontweight='bold')
+    axes[1,3].text(0.1, 0.6, f'Mean difference: {diff.mean():.3f}', fontsize=10)
+    axes[1,3].text(0.1, 0.4, f'Max difference: {diff.max():.3f}', fontsize=10)
     axes[1,3].axis('off')
 
     plt.tight_layout()
@@ -241,17 +241,17 @@ def compare_backbone_attention(image_path, backbone1, backbone2, preprocess,
 
 def benchmark_embedding_similarity(embeddings_dict, image_paths_dict, metric='cosine'):
     """
-    Calcula similitudes entre embeddings de diferentes categorías/vistas.
-    Útil para evaluar qué tan bien el backbone agrupa vistas del mismo equipo.
+    Calculates similarities between embeddings from different categories/views.
+    Useful for evaluating how well the backbone groups views of the same equipment.
     """
     try:
         from sklearn.metrics.pairwise import cosine_similarity, euclidean_distances
         import seaborn as sns
     except ImportError:
-        print("Instala scikit-learn y seaborn: pip install scikit-learn seaborn")
+        print("Install scikit-learn and seaborn: pip install scikit-learn seaborn")
         return None
 
-    # Aplanar embeddings y crear labels
+    # Flatten embeddings and create labels
     all_embeddings = []
     labels = []
 
@@ -262,7 +262,7 @@ def benchmark_embedding_similarity(embeddings_dict, image_paths_dict, metric='co
 
     all_embeddings = np.array(all_embeddings)
 
-    # Calcular similitud
+    # Calculate similarity
     if metric == 'cosine':
         similarity_matrix = cosine_similarity(all_embeddings)
     else:
@@ -270,7 +270,7 @@ def benchmark_embedding_similarity(embeddings_dict, image_paths_dict, metric='co
         dist_matrix = euclidean_distances(all_embeddings)
         similarity_matrix = 1 / (1 + dist_matrix)  # Convert to similarity
 
-    # Visualizar
+    # Visualize
     plt.figure(figsize=(10, 8))
     sns.heatmap(similarity_matrix, xticklabels=labels, yticklabels=labels,
                 cmap='viridis', annot=True, fmt='.2f', square=True)
