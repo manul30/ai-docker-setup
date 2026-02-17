@@ -21,6 +21,7 @@ services:
     volumes:
       - ./notebooks:/workspace/notebooks
       - ./data:/workspace/data
+      - ./models:/workspace/models
     ports:
       - "8888:8888"
     shm_size: "16gb"

@@ -7,12 +7,18 @@ ENV TZ=UTC
 ENV TORCH_ALLOW_TF32_CUBLAS_OVERRIDE=1
 ENV PYTORCH_JIT=1
 
-# Install system dependencies
+# Install system dependencies including OpenGL libraries for OpenCV
 RUN apt-get update && apt-get install -y \
     git \
     wget \
     curl \
     vim \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install JupyterLab and additional packages

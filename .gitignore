@@ -1,0 +1,5 @@
+models/
+notebooks/hvac*/
+notebooks/.ipynb_checkpoints/
+notebooks/training_deeplabv3_segmentation*
+data/
