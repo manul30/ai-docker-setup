@@ -1,0 +1,6 @@
+data/
+models/
+notebooks/Depth-Anything-V2
+notebooks/hvac*
+notebooks/.ipynb_checkpoints/
+notebooks/__pychache__/
