@@ -15,35 +15,40 @@ RUN apt-get update && apt-get install -y \
     vim \
     && rm -rf /var/lib/apt/lists/*
 
-# Install JupyterLab and additional packages
-# ONNX export stack — all versions pinned and verified to work together:
-#   onnx 1.19.1  <->  onnxruntime 1.23.0  <->  onnx-graphsurgeon 0.5.8
-#   litert-torch: PyTorch -> TFLite directly (no ONNX intermediate needed for TFLite)
-#   NOTE: litert-torch pins numpy<2 and tensorflow; install in correct order.
+# Install JupyterLab and general data-science packages
 RUN pip install --no-cache-dir \
     jupyterlab \
     ipywidgets \
     matplotlib \
     seaborn \
     pandas \
-    "numpy>=1.26.4,<2.0" \
     pillow \
     scikit-learn \
     opencv-python-headless \
     tqdm \
     roboflow \
     torch-pruning \
-    coremltools==9.0 \
+    thop \
+    pycocotools
+
+# Install TensorFlow + litert-torch pinned together
+# (tensorflow 2.19 needs numpy<2.2 and protobuf==4.25.5;
+#  litert-torch is the official PyTorch->TFLite converter)
+RUN pip install --no-cache-dir \
+    "numpy>=1.26.4,<2.0" \
+    "protobuf==4.25.5" \
+    "tensorflow==2.19.0" \
+    litert-torch
+
+# Install ONNX export stack pinned for mutual compatibility:
+#   onnx 1.19.1  <->  onnxruntime 1.23.0  <->  onnx-graphsurgeon 0.5.8
+RUN pip install --no-cache-dir \
     onnx==1.19.1 \
     onnxsim==0.4.36 \
     onnxscript \
     onnxruntime==1.23.0 \
     onnx-graphsurgeon==0.5.8 \
-    "tensorflow==2.19.0" \
-    "protobuf==4.25.5" \
-    litert-torch \
-    thop \
-    pycocotools
+    coremltools==9.0
 
 # Set working directory
 WORKDIR /workspace
