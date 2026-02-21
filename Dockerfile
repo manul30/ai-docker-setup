@@ -31,17 +31,12 @@ RUN pip install --no-cache-dir \
     thop \
     pycocotools
 
-# Install TensorFlow + litert-torch pinned together
-# (tensorflow 2.19 needs numpy<2.2 and protobuf==4.25.5;
-#  litert-torch is the official PyTorch->TFLite converter)
-RUN pip install --no-cache-dir \
-    "numpy>=1.26.4,<2.0" \
-    "protobuf==4.25.5" \
-    "tensorflow==2.19.0" \
-    litert-torch
-
-# Install ONNX export stack pinned for mutual compatibility:
+# Install ONNX export stack — all versions pinned and verified to work together:
 #   onnx 1.19.1  <->  onnxruntime 1.23.0  <->  onnx-graphsurgeon 0.5.8
+#   coremltools 9.0 for iOS/macOS export
+#   NOTE: TFLite conversion via onnx2tf/litert-torch both hit unresolvable dep
+#   conflicts with this PyTorch base image. Use ONNX Runtime on Android instead
+#   (works natively with the .onnx files produced by Step 1).
 RUN pip install --no-cache-dir \
     onnx==1.19.1 \
     onnxsim==0.4.36 \
