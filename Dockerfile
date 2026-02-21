@@ -16,6 +16,9 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install JupyterLab and additional packages
+# ONNX export stack versions are pinned for mutual compatibility:
+#   onnx 1.19.1  <->  onnxruntime 1.23.0  <->  onnx-graphsurgeon 0.5.8
+#   onnx2tf 1.29.24  <->  tensorflow 2.19.0  (onnx-graphsurgeon needs onnx>=1.16)
 RUN pip install --no-cache-dir \
     jupyterlab \
     ipywidgets \
@@ -26,7 +29,19 @@ RUN pip install --no-cache-dir \
     pillow \
     scikit-learn \
     opencv-python-headless \
-    tqdm
+    tqdm \
+    roboflow \
+    torch-pruning \
+    coremltools==9.0 \
+    onnx==1.19.1 \
+    onnxsim==0.4.36 \
+    onnxscript \
+    onnxruntime==1.23.0 \
+    onnx-graphsurgeon==0.5.8 \
+    tensorflow==2.19.0 \
+    onnx2tf==1.29.24 \
+    thop \
+    pycocotools
 
 # Set working directory
 WORKDIR /workspace
