@@ -16,16 +16,17 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install JupyterLab and additional packages
-# ONNX export stack versions are pinned for mutual compatibility:
+# ONNX export stack — all versions pinned and verified to work together:
 #   onnx 1.19.1  <->  onnxruntime 1.23.0  <->  onnx-graphsurgeon 0.5.8
-#   onnx2tf 1.29.24  <->  tensorflow 2.19.0  (onnx-graphsurgeon needs onnx>=1.16)
+#   litert-torch: PyTorch -> TFLite directly (no ONNX intermediate needed for TFLite)
+#   NOTE: litert-torch pins numpy<2 and tensorflow; install in correct order.
 RUN pip install --no-cache-dir \
     jupyterlab \
     ipywidgets \
     matplotlib \
     seaborn \
     pandas \
-    numpy \
+    "numpy>=1.26.4,<2.0" \
     pillow \
     scikit-learn \
     opencv-python-headless \
@@ -38,8 +39,9 @@ RUN pip install --no-cache-dir \
     onnxscript \
     onnxruntime==1.23.0 \
     onnx-graphsurgeon==0.5.8 \
-    tensorflow==2.19.0 \
-    onnx2tf==1.29.24 \
+    "tensorflow==2.19.0" \
+    "protobuf==4.25.5" \
+    litert-torch \
     thop \
     pycocotools
 
